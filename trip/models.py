@@ -4,7 +4,8 @@ class Trip(models.Model):
     pickup_location = models.CharField(max_length=255)
     dropoff_location = models.CharField(max_length=255)
     current_cycle_used = models.FloatField()
-    route_data = models.JSONField()
+    route_data = models.JSONField(null=True)
+    log_pdf = models.FileField(upload_to="logs/", blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
