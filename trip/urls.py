@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import TripListCreateView
+from .views import create_trip, trip_history
 
 urlpatterns = [
-    path('trips/', TripListCreateView.as_view(), name='trip-list-create'),
+    path('trips/', create_trip, name='create-trip'),
+    path('history/', trip_history, name='trip-history'),
 ]
