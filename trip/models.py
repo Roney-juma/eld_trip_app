@@ -13,4 +13,6 @@ class Trip(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"Trip {self.id}: {self.pickup_location_name} -> {self.dropoff_location_name} in {self.current_cycle_used} hrs"
+        # Return all the trip details in the model
+        return f"{self.pickup_location_name} to {self.dropoff_location_name}"
+        
